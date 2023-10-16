@@ -27,6 +27,13 @@ body {
     font-family: "Tahoma", sans-serif;
 }
 
+audio {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15vw;
+}
+
 .map {
     display: flex;
     width: 45%;
@@ -372,6 +379,19 @@ input  {
 
 .marta_welcome .introduction {
     background-color: #52d4f2;
+}
+
+.marta_welcome .introduction h1 {
+    text-align: center;
+    font-size: 1.7em;
+    animation: color-change 1.5s infinite;
+}
+  
+@keyframes color-change {
+    0% { color: #f27120; }
+    50% { color: #feb20f; }
+    90% { color: #0192ce; }
+    100% { color: #f27120; }
 }
 
 .marta_welcome .resources {
