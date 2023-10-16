@@ -6,7 +6,7 @@
 
 /* Scrollbar Track */
 ::-webkit-scrollbar-track {
-    background: rgba(2, 241, 285, 0)
+    background: rgba(2, 241, 285, 0);
 }
 
 /* Scrollbar Handle */
@@ -22,7 +22,6 @@
 
 body {
     margin: 0;
-    padding: 10px;
     display: flex;
     flex-direction: row;
     font-family: "Tahoma", sans-serif;
@@ -31,13 +30,14 @@ body {
 .map {
     display: flex;
     width: 45%;
-    height: 100vh;
-    padding: 1vw;
-    padding-top: 0;
+    /* height: 100vh; */
+    padding: 6vw;
+    padding-top: 10px;
+    padding-bottom: 0;
 }
 
-.map img {
-    height: 100%;
+.map:first-child {
+    height: 100vh;
 }
 
 
@@ -58,28 +58,28 @@ input  {
 #indian-btn {
     border: 3.5px solid cornflowerblue;
     background-color: cornflowerblue;
-    left: 32vw;
+    left: 38vw;
     top: 64%;
 }
 
 #holmes-btn {
     border: 3.5px solid #667be2;
     background-color: #667be2;
-    left: 1vw;
+    left: 4vw;
     top: 64%;
 }
 
 #bankhead-btn {
     border: 3.5px solid lightseagreen;
     background-color: lightseagreen;
-    left: 4.3vw;
+    left: 8.3vw;
     top: 57%;
 }
 
 #edgewood-btn {
     border: 3.5px solid #65c38f;
     background-color: #65c38f;
-    left: 23vw;
+    left: 29vw;
     top: 59.6%;
     width: 5vw;
 }
@@ -87,21 +87,21 @@ input  {
 #northSprings-btn {
     border: 3.5px solid #e37b7a;
     background-color: #e37b7a;
-    left: 16.8vw;
+    left: 21.8vw;
     top: 0.4vw;
 }
 
 #doraville-btn {
     border: 3.5px solid #f1d999;
     background-color: #f1d999;
-    left: 24.5vw;
+    left: 29.5vw;
     top: 19%;
 }
 
 #airport-btn {
     border: 3.5px solid sienna;
     background-color: sienna;
-    left: 13vw;
+    left: 17vw;
     bottom: -0.5vw;
 }
 
@@ -119,7 +119,7 @@ input  {
     align-items: center;
     position: absolute;
     top: calc(64% - 31%);
-    left: 32.2%;
+    left: 38.2%;
 }
 
 #holmes:checked ~ #holmes_pop_up {   
@@ -127,8 +127,8 @@ input  {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: calc(64% - 31%);
-    left: 1%;
+    top: calc(64% + 4.5%);
+    left: 4%;
 }
 
 #bankhead:checked ~ #bankhead_pop_up {   
@@ -137,7 +137,7 @@ input  {
     align-items: center;
     position: absolute;
     top: calc(57% - 31%);
-    left: 4.3%;
+    left: 8.3%;
 }
 
 #edgewood:checked ~ #edgewood_pop_up {   
@@ -146,7 +146,7 @@ input  {
     align-items: center;
     position: absolute;
     top: calc(59.6% - 31%);
-    left: 23%;
+    left: 29%;
 }
 
 #northSprings:checked ~ #northSprings_pop_up {   
@@ -155,7 +155,7 @@ input  {
     align-items: center;
     position: absolute;
     top: 5%;
-    left: 5.4%;
+    left: 10.4%;
 }
 
 #doraville:checked ~ #doraville_pop_up {   
@@ -164,7 +164,7 @@ input  {
     align-items: center;
     position: absolute;
     top: 23%;
-    left: 24.5%;
+    left: 29.5%;
 }
 
 #airport:checked ~ #airport_pop_up {   
@@ -173,7 +173,7 @@ input  {
     align-items: center;
     position: absolute;
     bottom: -1%;
-    left: 16.5%;
+    left: 20.5%;
 }
 
 /* styling of pop-up */
@@ -196,7 +196,7 @@ input  {
 .station_name {
     text-align: center;
     width: 100%;
-    font-size: 20pt;
+    font-size: 19pt;
     padding: 0 3px 8px 3px;
     margin-bottom: 0;
     border-bottom: 2px solid grey;
@@ -204,7 +204,7 @@ input  {
 
 .img {
     width: 100%;
-    height: 50%;
+    height: 100%;
     text-align: center;
 }
 
@@ -229,6 +229,31 @@ input  {
     display: flex;
     flex-direction: column;
     position: fixed;
-    right: 0;
+    left: 0;
     bottom: 0;
+}
+
+.marta_welcome {
+    margin: 0;
+    margin-left: 9vw;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0ede9;
+}
+
+.marta_welcome div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 1vw;
+    padding: 1vw;
+}
+
+.marta_welcome .introduction {
+    background-color: #52d4f2;
+}
+
+.marta_welcome .resources {
+    background-color: #e5a950;
 }
