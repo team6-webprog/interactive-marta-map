@@ -99,8 +99,8 @@ input  {
 }
 
 #airport-btn {
-    border: 3.5px solid sienna;
-    background-color: sienna;
+    border: 3.5px solid rgb(251, 85, 8);;
+    background-color: rgb(251, 85, 8);;
     left: 17vw;
     bottom: -0.5vw;
 }
@@ -222,6 +222,133 @@ input  {
 
 .pop_up .body p {
     margin: 5px;
+}
+
+/* Train animation */
+
+.train {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+/* Style the train images */
+.train img {
+    width: 100%; /* Set the image to fill the container */
+}
+
+/* Define individual animations for each train */
+
+/* Blue Train */
+.train-blue {
+    left: 0;
+    top: 430px; /* Set the starting position for the blue train */
+    animation: moveRightBlue 3s  infinite alternate;
+}
+
+@keyframes moveRightBlue {
+    0% { left: 0; }
+    100% { left: 485px; }
+}
+
+/* Green Train */
+.train-green {
+    left: 20px;
+    top: 390px;
+    animation: moveRightGreen 3s infinite alternate;
+}
+
+@keyframes moveRightGreen {
+ 0%{     top: 390px;
+         left: 50px;
+ }
+   40%{
+    top: 420px;
+    left: 150px;
+}     
+    100% { 
+        top: 420px;
+        left: 360px; }
+}
+
+/* Red Train */
+.train-red {
+    left: 246px;
+    animation: moveDownRed 6s infinite alternate;
+}
+
+@keyframes moveDownRed {
+    0% {
+        top: 0;
+        left: 246px;
+    }
+    10% {
+        top: 35px; /* Adjust the vertical distance */
+        left: 270px;
+ }
+    20% {
+        top: 75px; /* Adjust the vertical distance */
+        left: 270px;
+ }
+    30% {
+        top: 125px; /* Adjust the vertical distance */
+        left: 242px;
+ }
+    40% {
+        top: 182px; /* Adjust the vertical distance */
+        left: 242px;
+ }
+    50% {
+        top: 240px; /* Adjust the vertical distance */
+        left: 192px;
+ }
+    60% {
+        top: 400px; /* Adjust the vertical distance */
+        left: 195px;
+ }
+    70% {
+        top: 480px; /* Adjust the vertical distance */
+        left: 140px;
+ }
+    80% {
+        top: 540px; /* Adjust the vertical distance */
+        left: 140px;
+ }
+    85% {
+        top: 600px; /* Adjust the vertical distance */
+        left: 140px;
+ }
+    90% {
+        top: 650px; /* Adjust the vertical distance */
+        left: 140px;
+ }
+    100% {
+        top: 655px; /* Adjust the vertical distance */
+        left: 180px;
+ }
+}
+
+/* Gold Train */
+.train-gold {
+    top: 130px;
+    left: 360px;
+    animation: moveDownGold 4s infinite alternate;
+}
+
+@keyframes moveDownGold {
+    0% { top: 130px; 
+        left: 360px; }
+    20% { top: 242px; 
+        left: 210px; }
+    40% { top: 430px; 
+        left: 200px; }
+    60% { top: 490px; 
+        left: 160px; }
+
+    90% { top: 630px;
+        left: 160px; }
+    100% { top: 650px;
+        left: 180px; }
 }
 
 /* html and css validators */
