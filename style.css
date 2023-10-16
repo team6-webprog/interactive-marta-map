@@ -6,7 +6,7 @@
 
 /* Scrollbar Track */
 ::-webkit-scrollbar-track {
-    background: rgba(2, 241, 285, 0);
+    background: rgba(2, 241, 285, 0)
 }
 
 /* Scrollbar Handle */
@@ -22,22 +22,76 @@
 
 body {
     margin: 0;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     font-family: "Tahoma", sans-serif;
+    background-color: rgb(255, 170, 105);
 }
-
+/*new*/
+.image1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  .image2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    z-index: 2;
+  }
+  
+  .image3 {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-25%, -25%);
+    width: 25%;
+    height: 25%;
+    z-index: 3;
+  }
+  
+.transition-container {
+    width: 1000px;
+    height: 1000px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: backgroundTransition 38s infinite; /* 30s wait + 3s transition + 5s wait = 38s total animation */
+}
+/*end*/
+@keyframes backgroundTransition {
+    0%, 100% {
+        background-image: url('color.gif'); /* Start and end with background1 */
+        animation-timing-function: steps(1, end); /* No transition at the start and end */
+    }
+    12.5% {
+        background-image: url('lofi\ train.gif'); /* Transition to background2 at 30s (25% of 30s) */
+        animation-timing-function: ease-in-out; /* Smooth 3s transition */
+    }
+    87.5% {
+        background-image: url('color.gif'); /* Transition back to background1 at 35s (5s after the transition) */
+        animation-timing-function: ease-in-out; /* Smooth 5s transition */
+    }
+}
+/* end hither*/
 .map {
     display: flex;
     width: 45%;
-    /* height: 100vh; */
-    padding: 6vw;
-    padding-top: 10px;
-    padding-bottom: 0;
+    height: 100vh;
+    padding: 1vw;
+    padding-top: 0;
 }
 
-.map:first-child {
-    height: 100vh;
+.map img {
+    height: 100%;
+    
 }
 
 
@@ -54,32 +108,73 @@ input  {
     text-align: center;
     font-size: 0.8vw;
 }
+.train {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
 
+/* Style the train images */
+.train img {
+    width: 100%; /* Set the image to fill the container */
+}
+
+/* Define individual animations for each train */
+
+/* Blue Train */
+.train-blue {
+    left: 0;
+    top: 430px; /* Set the starting position for the blue train */
+    animation: moveRightBlue 3s  infinite alternate;
+}
 #indian-btn {
     border: 3.5px solid cornflowerblue;
     background-color: cornflowerblue;
-    left: 38vw;
+    left: 32vw;
     top: 64%;
 }
-
+/*new*/
+@keyframes moveRightBlue {
+        0% { left: 0; }
+        100% { left: 485px; }
+    }
+/*new--end*/
 #holmes-btn {
     border: 3.5px solid #667be2;
     background-color: #667be2;
-    left: 4vw;
+    left: 1vw;
     top: 64%;
 }
 
 #bankhead-btn {
     border: 3.5px solid lightseagreen;
     background-color: lightseagreen;
-    left: 8.3vw;
+    left: 4.3vw;
     top: 57%;
 }
+/* Green Train */
+.train-green {
+    left: 20px;
+    top: 390px;
+    animation: moveRightGreen 3s infinite alternate;
+}
 
+@keyframes moveRightGreen {
+ 0%{     top: 390px;
+         left: 50px;
+ }
+   40%{
+    top: 420px;
+    left: 150px;
+}     
+    100% { 
+        top: 420px;
+        left: 360px; }
+}
 #edgewood-btn {
     border: 3.5px solid #65c38f;
     background-color: #65c38f;
-    left: 29vw;
+    left: 23vw;
     top: 59.6%;
     width: 5vw;
 }
@@ -87,22 +182,26 @@ input  {
 #northSprings-btn {
     border: 3.5px solid #e37b7a;
     background-color: #e37b7a;
-    left: 21.8vw;
+    left: 16.8vw;
     top: 0.4vw;
 }
 
 #doraville-btn {
     border: 3.5px solid #f1d999;
     background-color: #f1d999;
-    left: 29.5vw;
+    left: 24.5vw;
     top: 19%;
 }
 
 #airport-btn {
-    border: 3.5px solid sienna;
+    border: 3.5px solid sienna; /* should use rgb(251, 85, 8); (its an orange color, red+yellow lines)*/
     background-color: sienna;
-    left: 17vw;
+    left: 13vw;
     bottom: -0.5vw;
+}
+#airport-btn:hover ~ .train-container .train {
+    transform: translateX(200px);
+    transition: transform 2s;
 }
 
 /* on hover, change effect and make it look clickable with pointer cursor */
@@ -119,7 +218,7 @@ input  {
     align-items: center;
     position: absolute;
     top: calc(64% - 31%);
-    left: 38.2%;
+    left: 32.2%;
 }
 
 #holmes:checked ~ #holmes_pop_up {   
@@ -127,8 +226,8 @@ input  {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: calc(64% + 4.5%);
-    left: 4%;
+    top: calc(64% - 31%);
+    left: 1%;
 }
 
 #bankhead:checked ~ #bankhead_pop_up {   
@@ -137,7 +236,7 @@ input  {
     align-items: center;
     position: absolute;
     top: calc(57% - 31%);
-    left: 8.3%;
+    left: 4.3%;
 }
 
 #edgewood:checked ~ #edgewood_pop_up {   
@@ -146,7 +245,7 @@ input  {
     align-items: center;
     position: absolute;
     top: calc(59.6% - 31%);
-    left: 29%;
+    left: 23%;
 }
 
 #northSprings:checked ~ #northSprings_pop_up {   
@@ -155,16 +254,94 @@ input  {
     align-items: center;
     position: absolute;
     top: 5%;
-    left: 10.4%;
+    left: 5.4%;
+}
+/* Red Train */
+.train-red {
+    left: 246px;
+    animation: moveDownRed 6s infinite alternate;
 }
 
+@keyframes moveDownRed {
+    0% {
+        top: 0;
+        left: 246px;
+    }
+    10% {
+        top: 35px; /* Adjust the vertical distance */
+        left: 270px;
+ }
+    20% {
+        top: 75px; /* Adjust the vertical distance */
+        left: 270px;
+ }
+    30% {
+        top: 125px; /* Adjust the vertical distance */
+        left: 242px;
+ }
+    40% {
+        top: 182px; /* Adjust the vertical distance */
+        left: 242px;
+ }
+    50% {
+        top: 240px; /* Adjust the vertical distance */
+        left: 192px;
+ }
+    60% {
+        top: 400px; /* Adjust the vertical distance */
+        left: 195px;
+ }
+    70% {
+        top: 480px; /* Adjust the vertical distance */
+        left: 140px;
+ }
+    80% {
+        top: 540px; /* Adjust the vertical distance */
+        left: 140px;
+ }
+    85% {
+        top: 600px; /* Adjust the vertical distance */
+        left: 140px;
+ }
+    90% {
+        top: 650px; /* Adjust the vertical distance */
+        left: 140px;
+ }
+    100% {
+        top: 655px; /* Adjust the vertical distance */
+        left: 180px;
+ }
+}
 #doraville:checked ~ #doraville_pop_up {   
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
     top: 23%;
-    left: 29.5%;
+    left: 24.5%;
+}
+/* Gold Train */
+.train-gold {
+    top: 130px;
+    left: 360px;
+    animation: moveDownGold 4s infinite alternate;
+
+}
+
+@keyframes moveDownGold {
+    0% { top: 130px; 
+        left: 360px; }
+    20% { top: 242px; 
+        left: 210px; }
+    40% { top: 430px; 
+        left: 200px; }
+    60% { top: 490px; 
+        left: 160px; }
+   
+    90% { top: 630px;
+        left: 160px; }
+    100% { top: 650px;
+        left: 180px; }
 }
 
 #airport:checked ~ #airport_pop_up {   
@@ -173,7 +350,7 @@ input  {
     align-items: center;
     position: absolute;
     bottom: -1%;
-    left: 20.5%;
+    left: 16.5%;
 }
 
 /* styling of pop-up */
@@ -196,7 +373,7 @@ input  {
 .station_name {
     text-align: center;
     width: 100%;
-    font-size: 19pt;
+    font-size: 20pt;
     padding: 0 3px 8px 3px;
     margin-bottom: 0;
     border-bottom: 2px solid grey;
@@ -204,7 +381,7 @@ input  {
 
 .img {
     width: 100%;
-    height: 100%;
+    height: 50%;
     text-align: center;
 }
 
@@ -229,31 +406,45 @@ input  {
     display: flex;
     flex-direction: column;
     position: fixed;
-    left: 0;
+    right: 0;
     bottom: 0;
 }
+.liddle-logo{
+        width: 15px;
+        height: 15px;
+        background: red;
+        position: absolute;
+        animation: mymove 5s infinite;
+        z-index: 1;
+}
+@keyframes mymove {
+    0%   {top: 0px; left: 0px; background: red;}
+    25%  {top: 0px; left: 20px; background: blue;}
+    50%  {top: 20px; left: 20px; background: rgb(255, 221, 0);}
+    75%  {top: 20px; left: 0px; background: green;}
+    100% {top: 0px; left: 0px; background: red;}
+  }
+  .striped-box {
+  width: 50px;
+  height: 50px;
+  rotate: 180deg;
+  border-radius: 100%;
+  position: fixed;/*inherit*/
+  top: 0;
+  left: 0;
+  background: linear-gradient(-45deg, rgb(74, 141, 208), rgb(255, 227, 43) 25%, rgb(255, 140, 0) 25%, rgb(74, 141, 208) 50%,  rgb(255, 227, 43) 50%, rgb(255, 140, 0) 75%, rgb(0, 0, 0) 75%);
+  background-size: 100% 200%; /* Double the background size to cover the entire box */
+  animation: moveStripes 10s linear infinite; /* Adjust the animation duration as needed */
+  z-index: 2;
 
-.marta_welcome {
-    margin: 0;
-    margin-left: 9vw;
-    padding: 1vw;
-    display: flex;
-    flex-direction: column;
-    background-color: #f0ede9;
 }
 
-.marta_welcome div {
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    margin: 1vw;
-    padding: 1vw;
+@keyframes moveStripes {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
-.marta_welcome .introduction {
-    background-color: #52d4f2;
-}
-
-.marta_welcome .resources {
-    background-color: #e5a950;
-}
