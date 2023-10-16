@@ -58,7 +58,7 @@ input  {
 #indian-btn {
     border: 3.5px solid cornflowerblue;
     background-color: cornflowerblue;
-    left: 38vw;
+    left: 36vw;
     top: 64%;
 }
 
@@ -79,7 +79,7 @@ input  {
 #edgewood-btn {
     border: 3.5px solid #65c38f;
     background-color: #65c38f;
-    left: 29vw;
+    left: 27vw;
     top: 59.6%;
     width: 5vw;
 }
@@ -247,108 +247,101 @@ input  {
 }
 
 @keyframes moveRightBlue {
-    0% { left: 0; }
-    100% { left: 485px; }
+    0% { left: -5px; }
+    100% { left: 470px; }
 }
 
 /* Green Train */
 .train-green {
-    left: 20px;
+    left: 10px;
     top: 390px;
     animation: moveRightGreen 3s infinite alternate;
 }
 
 @keyframes moveRightGreen {
- 0%{     top: 390px;
-         left: 50px;
+ 0%{     top: 382px;
+         left: 20px;
  }
    40%{
     top: 420px;
-    left: 150px;
+    left: 140px;
 }     
     100% { 
         top: 420px;
-        left: 360px; }
+        left: 340px; }
 }
 
 /* Red Train */
 .train-red {
-    left: 246px;
+    left: 226px;
     animation: moveDownRed 6s infinite alternate;
 }
 
 @keyframes moveDownRed {
     0% {
         top: 0;
-        left: 246px;
+        left: 226px;
     }
     10% {
         top: 35px; /* Adjust the vertical distance */
-        left: 270px;
+        left: 250px;
  }
     20% {
         top: 75px; /* Adjust the vertical distance */
-        left: 270px;
+        left: 250px;
  }
     30% {
         top: 125px; /* Adjust the vertical distance */
-        left: 242px;
+        left: 222px;
  }
     40% {
         top: 182px; /* Adjust the vertical distance */
-        left: 242px;
+        left: 222px;
  }
     50% {
         top: 240px; /* Adjust the vertical distance */
-        left: 192px;
+        left: 172px;
  }
     60% {
         top: 400px; /* Adjust the vertical distance */
-        left: 195px;
+        left: 175px;
  }
     70% {
         top: 480px; /* Adjust the vertical distance */
-        left: 140px;
+        left: 120px;
  }
-    80% {
-        top: 540px; /* Adjust the vertical distance */
-        left: 140px;
- }
-    85% {
-        top: 600px; /* Adjust the vertical distance */
-        left: 140px;
- }
+ 
     90% {
         top: 650px; /* Adjust the vertical distance */
-        left: 140px;
+        left: 120px;
  }
     100% {
         top: 655px; /* Adjust the vertical distance */
-        left: 180px;
+        left: 160px;
  }
 }
 
 /* Gold Train */
 .train-gold {
-    top: 130px;
-    left: 360px;
+    top: 120px;
+    left: 340px;
     animation: moveDownGold 4s infinite alternate;
 }
 
 @keyframes moveDownGold {
-    0% { top: 130px; 
-        left: 360px; }
+    0% { top: 120px; 
+        left: 370px; }
     20% { top: 242px; 
-        left: 210px; }
+        left: 190px; }
     40% { top: 430px; 
-        left: 200px; }
+        left: 190px; }
     60% { top: 490px; 
-        left: 160px; }
+        left: 150px; }
 
     90% { top: 630px;
-        left: 160px; }
+        left: 150px; }
     100% { top: 650px;
-        left: 180px; }
+        left: 170px; }
 }
 
 /* html and css validators */
