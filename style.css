@@ -37,7 +37,6 @@ audio {
 .map {
     display: flex;
     width: 45%;
-    /* height: 100vh; */
     padding: 6vw;
     padding-top: 10px;
     padding-bottom: 0;
@@ -46,7 +45,6 @@ audio {
 .map:first-child {
     height: 100vh;
 }
-
 
 /* Don't show check-box, only the button label #indian-btn, #holmes-btn, etc. */
 input  {
@@ -112,7 +110,7 @@ input  {
     bottom: -0.5vw;
 }
 
-/* on hover, change effect and make it look clickable with pointer cursor */
+/* on hover, change button effect and make it look clickable with pointer cursor */
 .btn:hover {
     transition: 0.5s;
     color: white;
@@ -231,15 +229,15 @@ input  {
     margin: 5px;
 }
 
-/* Train animation */
+/* train animation */
 
+/* Style the train images */
 .train {
     position: absolute;
     width: 50px;
     height: 50px;
 }
 
-/* Style the train images */
 .train img {
     width: 100%; /* Set the image to fill the container */
 }
@@ -266,16 +264,18 @@ input  {
 }
 
 @keyframes moveRightGreen {
- 0%{     top: 382px;
-         left: 20px;
- }
-   40%{
-    top: 420px;
-    left: 140px;
-}     
+    0%{
+        top: 382px;
+        left: 20px;
+    }
+    40%{
+        top: 420px;
+        left: 140px;
+    }     
     100% { 
         top: 420px;
-        left: 340px; }
+        left: 340px;
+    }
 }
 
 /* Red Train */
@@ -290,40 +290,40 @@ input  {
         left: 226px;
     }
     10% {
-        top: 35px; /* Adjust the vertical distance */
+        top: 35px; 
         left: 250px;
  }
     20% {
-        top: 75px; /* Adjust the vertical distance */
+        top: 75px; 
         left: 250px;
  }
     30% {
-        top: 125px; /* Adjust the vertical distance */
+        top: 125px; 
         left: 222px;
  }
     40% {
-        top: 182px; /* Adjust the vertical distance */
+        top: 182px; 
         left: 222px;
  }
     50% {
-        top: 240px; /* Adjust the vertical distance */
+        top: 240px; 
         left: 172px;
  }
     60% {
-        top: 400px; /* Adjust the vertical distance */
+        top: 400px; 
         left: 175px;
  }
     70% {
-        top: 480px; /* Adjust the vertical distance */
+        top: 480px; 
         left: 120px;
  }
  
     90% {
-        top: 650px; /* Adjust the vertical distance */
+        top: 650px; 
         left: 120px;
  }
     100% {
-        top: 655px; /* Adjust the vertical distance */
+        top: 655px; 
         left: 160px;
  }
 }
@@ -336,29 +336,34 @@ input  {
 }
 
 @keyframes moveDownGold {
-    0% { top: 120px; 
-        left: 370px; }
-    20% { top: 242px; 
-        left: 190px; }
-    40% { top: 430px; 
-        left: 190px; }
-    60% { top: 490px; 
-        left: 150px; }
+    0% { 
+        top: 120px; 
+        left: 370px; 
+    }
+    20% { 
+        top: 242px; 
+        left: 190px; 
+    }
+    40% { 
+        top: 430px; 
+        left: 190px; 
+    }
+    60% { 
+        top: 490px; 
+        left: 150px; 
+    }
 
-    90% { top: 630px;
-        left: 150px; }
-    100% { top: 650px;
-        left: 170px; }
+    90% { 
+        top: 630px;
+        left: 150px; 
+    }
+    100% { 
+        top: 650px;
+        left: 170px; 
+    }
 }
 
-/* html and css validators */
-.validators {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-}
+/* right sidebar with MARTA information */
 
 .marta_welcome {
     margin: 0;
@@ -369,6 +374,7 @@ input  {
     background-color: #f0ede9;
 }
 
+/* style the introduction and resources divs */
 .marta_welcome div {
     display: flex;
     flex-direction: column;
@@ -396,4 +402,13 @@ input  {
 
 .marta_welcome .resources {
     background-color: #e5a950;
+}
+
+/* html and css validators */
+.validators {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
